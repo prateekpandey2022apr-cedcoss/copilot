@@ -89,15 +89,3 @@ test("integration test", async () => {
   expect(updatedPost).not.toEqual({});
   expect(deletedPost).toEqual({});
 });
-
-// Find the pincode of a city using an api
-
-const findPinode = (city) => {
-  return fetch(`https://api.postalpincode.in/pincode/${city}`)
-    .then((response) => response.json())
-    .then((data) => {
-      return data[0].PostOffice[0].Pincode;
-    });
-};
-
-const pincodes = [];
